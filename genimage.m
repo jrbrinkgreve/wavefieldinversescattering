@@ -1,8 +1,16 @@
 %genimage file
 image = zeros(Nx, Ny);
 
-%ellipse, or a potato :)
 
+
+
+
+
+
+
+
+%ellipse, or a potato :)
+%{
 
 %center of ellipse
 cx = 11; cy = 11;
@@ -33,6 +41,15 @@ for x = 1:Nx
         end
     end
 end
+%}
+
+
+
+
+
+
+
+
 
 
 
@@ -57,6 +74,12 @@ image = image * 0.01; % to reduce contrast
 
 
 
+
+
+
+
+
+
 %square:
 %{
 side = 9;
@@ -75,10 +98,6 @@ image(start_idx:end_idx, start_idx:end_idx) = 1;
 
 
 
-
-
-
-%{
 %half-circle:
 % Parameters
 radius = 6;
@@ -100,7 +119,6 @@ for x = 1:Nx
         end
     end
 end
-%}
 
 
 
@@ -109,6 +127,8 @@ end
 
 %--------------------------
 
+
+%in case we also want noisy images, but shouldnt matter too much
 
 image_no_noise = image;
 
@@ -123,17 +143,9 @@ image_original = image_no_noise + noise;
 
 figure;
 % Plot real part
-subplot(1,2,1);
 imagesc(image_no_noise);
 colormap(gray);
 colorbar
 axis equal tight;
-title('Object without noise')
+title('Object')
 
-% Plot imaginary part
-subplot(1,2,2);
-imagesc(image_original);
-colormap(gray);
-colorbar
-axis equal tight;
-title(['Object with noise, \sigma = '  num2str(sigma)])
